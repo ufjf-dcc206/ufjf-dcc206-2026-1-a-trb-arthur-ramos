@@ -95,8 +95,24 @@ export class Tabuleiro {
 
   alternarBandeira(linha, coluna) {
     const celula = this.grade[linha][coluna];
-    if (!celula.ehRevelada) {
-      celula.ehBandeirada = !celula.ehBandeirada;
+    if (celula.ehRevelada) return;
+
+    if(celula.ehBandeirada){
+      celula.ehBandeirada = false;
+      return;
+    }
+
+    let quantidadeBandeiras = 0;
+
+    this.grade.forEach(linha => {
+      linha.forEach(c => {
+        if(c.ehBandeirada) quantidadeBandeiras ++;
+      });
+    });
+
+    if(quantidadeBandeiras < this.quantidadeMinas) {
+      celula.ehBandeirada = true;
     }
   }
+
 }
