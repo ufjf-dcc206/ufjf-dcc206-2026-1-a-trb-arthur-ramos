@@ -50,3 +50,33 @@ cabecalho-jogo {
 #botao-reiniciar:active {
   border-style: inset;
 }
+
+celula-jogo {
+  width: 30px;
+  height: 30px;
+  background-color: silver;
+  border: 2px outset white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+celula-jogo.revelada {
+  background-color: #d1d1d1;
+  border: 1px solid #a0a0a0;
+  cursor: default;
+}
+
+celula-jogo.mina {
+  background-color: #ff4d4d;
+}
+
+celula-jogo.bandeirada {
+  background-color: silver;
+}
