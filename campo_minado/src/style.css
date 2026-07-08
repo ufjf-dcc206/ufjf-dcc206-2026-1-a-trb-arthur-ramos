@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  background-color: ghostwhite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+cabecalho-jogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid silver;
+  box-sizing: border-box;
+}
+
+.contador {
+  background-color: black;
+  color: red;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+  border: 2px inset gray;
+}
+
+#botao-reiniciar {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  background-color: silver;
+  border: 2px outset white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#botao-reiniciar:active {
+  border-style: inset;
+}
