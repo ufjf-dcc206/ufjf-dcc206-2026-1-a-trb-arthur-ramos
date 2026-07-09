@@ -21,15 +21,20 @@ export class CelulaJogo extends HTMLElement {
       }));
     });
 
-    this.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      this.dispatchEvent(new CustomEvent('celula-bandeira', {
-        bubbles: true,
-        detail: {
-          linha: +this.dataset.linha,
-          coluna: +this.dataset.coluna,
-        }
-      }));
+    this.addEventListener('pointerdown', () => {
+      timeout = setTimeout(() => {
+        this.dispatchEvent(new CustomEvent('celula-bandeira', {
+          bubbles: true,
+          detail: {
+            linha: +this.dataset.linha,
+            coluna: +this.dataset.coluna,
+          }
+        }));
+      }, 500);
+    });
+
+    this.addEventListener('pointerup', () => {
+      clearTimeout(timeout);
     });
   }
 
